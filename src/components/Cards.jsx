@@ -6,22 +6,23 @@ class Cards extends Component {
         super(props);
 
         this.state = {
-            message: [],
-            clickMessage: []
+            filmArray: [],
+            buttonCheck: false
         };
         
     };
     componentDidMount() {
         fetch("https://ghibliapi.herokuapp.com/films")
         .then(res => res.json())
-        .then(obj => {
-            return obj;
-        })
-    };
+        .then(obj => this.setState({filmArray: obj})) 
+    }
 
     
 
     render() {
+        // let movieCards = this.state.filmArray.map((film, id) => {
+        //     if(this.state.buttonCheck === true)
+        // })
         return (
             <div>
                 <div className="row">
